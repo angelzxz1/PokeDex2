@@ -10,15 +10,15 @@ const sequelize = new Sequelize(
 const caller = async () => {
 	try {
 		await sequelize.authenticate();
-		console.log("Connection has been established successfully.");
+		return "Connection has been established successfully.";
 	} catch (error) {
-		console.error("Unable to connect to the database:", error);
+		return "Unable to connect to the database";
 	}
 };
 
 const handler = async (req: any, res: any) => {
-	const result = caller();
-	res.json(result);
+	const result = await caller();
+	res.json({ result });
 };
 
 module.exports = handler;
