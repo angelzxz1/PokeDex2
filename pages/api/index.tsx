@@ -7,8 +7,17 @@ const sequelize = new Sequelize(
 	}
 );
 
+const caller = async () => {
+	try {
+		await sequelize.authenticate();
+		console.log("Connection has been established successfully.");
+	} catch (error) {
+		console.error("Unable to connect to the database:", error);
+	}
+};
+
 const handler = async (req: any, res: any) => {
-	const result = await sequelize.query("SELECT * FROM users");
+	const result = caller();
 	res.json(result);
 };
 
