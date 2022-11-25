@@ -3,12 +3,12 @@ import Head from "next/head";
 import NavBar from "../navBar";
 import type { Router } from "next/dist/client/router";
 //                  next/app/dist/pages/client/router
+
 type Props = {
 	children: JSX.Element;
 	router: Router;
-	title: string;
 };
-const Main = ({ children, router, title }: Props) => {
+const Main = ({ children, router }: Props) => {
 	return (
 		<Box as="main">
 			<Head>
@@ -22,11 +22,6 @@ const Main = ({ children, router, title }: Props) => {
 					href="/favicon.ico"
 					type="image/x-icon"
 				/>
-				<title>
-					{title === "notFound"
-						? " - Page not found"
-						: `- ${title}`}
-				</title>
 			</Head>
 			<NavBar path={router.asPath} />
 			<Container maxW="container.xl" pt="4rem">
