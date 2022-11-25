@@ -29,7 +29,7 @@ const Main = ({ children, router, title }: Props) => {
 				</title>
 			</Head>
 			<NavBar path={router.asPath} />
-			<Container maxW="container.2xl" pt={14}>
+			<Container maxW="container.xl" pt="4rem">
 				{children}
 			</Container>
 		</Box>
