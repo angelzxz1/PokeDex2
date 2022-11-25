@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 	// console.log(theme);
 	return (
 		<ChakraProvider theme={theme}>
-			<Main router={router} title={Component.name}>
+			<Main router={router}>
 				<Component {...pageProps} />
 			</Main>
 		</ChakraProvider>
