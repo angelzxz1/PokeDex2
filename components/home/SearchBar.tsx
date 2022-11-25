@@ -6,6 +6,7 @@ const SearchBar = ({
 }: {
 	setAltura: Dispatch<SetStateAction<number>>;
 }) => {
+	const [search,setSearch] = useState("")
 	return (
 		<Flex w="100%" alignItems="center" justifyContent="center">
 			<Input
@@ -20,20 +21,19 @@ const SearchBar = ({
 				_hover={{
 					borderBottom: "1px solid green",
 				}}
+				onKeyDown={e => {
+					console.log(e.key);
+					if (e.key === "Enter") {
+						setAltura(prev =>
+							prev === 100 ? 20 : 100
+						);
+					}
+				}}
 				outline="none"
 				textAlign="center"
 				fontSize="1.5rem"
 				fontWeight="bold"
 			/>
-			<Button
-				onClick={() => {
-					setAltura(prev =>
-						prev === 100 ? 20 : 100
-					);
-				}}
-			>
-				Toggle
-			</Button>
 		</Flex>
 	);
 };
