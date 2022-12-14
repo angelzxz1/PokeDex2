@@ -6,7 +6,7 @@ const SearchBar = ({
 }: {
 	setAltura: Dispatch<SetStateAction<number>>;
 }) => {
-	const [search,setSearch] = useState("")
+	const [search, setSearch] = useState("");
 	return (
 		<Flex w="100%" alignItems="center" justifyContent="center">
 			<Input
@@ -22,7 +22,6 @@ const SearchBar = ({
 					borderBottom: "1px solid green",
 				}}
 				onKeyDown={e => {
-					console.log(e.key);
 					if (e.key === "Enter") {
 						setAltura(prev =>
 							prev === 100 ? 20 : 100
