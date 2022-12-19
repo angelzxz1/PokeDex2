@@ -12,7 +12,7 @@ const List = () => {
 	const load = async () => {
 		if (!pokeList.loaded) {
 			let tempArray: { name: string; sprite: string }[] = [];
-			for (let i = 1; i <= 500; i++) {
+			for (let i = 1; i <= 30; i++) {
 				const res = await axios.get(
 					`https://pokeapi.co/api/v2/pokemon/${i}`
 				);
