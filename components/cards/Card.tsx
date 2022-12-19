@@ -7,10 +7,10 @@ interface props {
 
 const Card = ({ url, name }: props) => {
 	return (
-		<Grid border="solid 1px" borderColor="whiteAlpha.500">
+		<Flex border="solid 1px" borderColor="whiteAlpha.500">
 			<Image src={url} />
 			{name}
-		</Grid>
+		</Flex>
 	);
 };
 export default Card;

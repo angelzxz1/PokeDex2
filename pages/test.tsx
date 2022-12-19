@@ -1,3 +1,4 @@
+import { Flex } from "@chakra-ui/react";
 import Card from "../components/cards/Card";
 
 const lnk =
@@ -10,11 +11,11 @@ const Test = () => {
 		arr.push(i);
 	}
 	return (
-		<>
+		<Flex wrap="wrap" direction="column" maxW="30%" bg="red">
 			{arr.map(item => {
 				return <Card url={lnk} name={nme} />;
 			})}
-		</>
+		</Flex>
 	);
 };
 
