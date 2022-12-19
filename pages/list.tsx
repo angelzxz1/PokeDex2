@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Head from "next/head";
@@ -32,20 +32,30 @@ const List = () => {
 			<Head>
 				<title>PokeDex - List</title>
 			</Head>
-			<Box>
+			<Flex
+				wrap="wrap"
+				justify="space-around"
+				gap={10}
+				mt={5}
+			>
 				{pokeList.loaded ? (
 					pokeList.list.map((item, i) => (
 						<Pokemon
 							key={i}
 							imgLink={item.sprite}
 						>
-							{item.name}
+							{item.name
+								.charAt(0)
+								.toUpperCase() +
+								item.name.slice(
+									1
+								)}
 						</Pokemon>
 					))
 				) : (
 					<Box>loading...</Box>
 				)}
-			</Box>
+			</Flex>
 		</>
 	);
 };
